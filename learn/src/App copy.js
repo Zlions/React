@@ -1,14 +1,13 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
-import { RouteConfig } from './RouteConfig'
 
 
-function User({ match }) {
+function User({match}) {
     return <div>
         <h1>user 固定</h1>
         <p>
-            <Link to={RouteConfig.user.update}> user update</Link>
-            <Link to={RouteConfig.user.pay}> user pay</Link>
+            <Link to={`${match.url}/update`}> user update</Link>
+            <Link to={`${match.url}/pay`}> user pay</Link>
         </p>
         <div style={{
             width: 500,
@@ -17,8 +16,8 @@ function User({ match }) {
             border: '2px solid',
             margin: '0 auto'
         }}>
-            <Route path={RouteConfig.user.update} component={UserUpdate} />
-            <Route path={RouteConfig.user.pay} component={UserPay} />
+            <Route path={`${match.url}/update`} component={UserUpdate} />
+            <Route path={`${match.url}/pay`} component={UserPay} />
         </div>
 
     </div>
@@ -34,7 +33,7 @@ function UserPay() {
 
 export default function App() {
     return <Router>
-        <Route path={RouteConfig.user.root} component={User} />
+        <Route path="/u" component={User} />
     </Router>
 }
 
