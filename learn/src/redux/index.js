@@ -1,13 +1,16 @@
-import { createStore } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
 import reducer from './reducer/index'
 
 import { AddUserAction, DeleteUserAction } from './action/usersAction'
+import { createLogger } from 'redux-logger'
 
+const logger = createLogger({
+    collapsed: false,
+    duration: true
+})
 
+const store = createStore(reducer, applyMiddleware(logger));
 
-const store = createStore(reducer);
-
-console.log(store.getState());
 
 store.dispatch(AddUserAction({
     id: 3,
@@ -15,8 +18,5 @@ store.dispatch(AddUserAction({
     sex: 0
 }))
 
-console.log(store.getState());
 
 store.dispatch(DeleteUserAction(3))
-
-console.log(store.getState());
