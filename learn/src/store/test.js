@@ -1,7 +1,10 @@
 import store from './index'
-import { fetchStudents } from './action/student/result'
+import { asyncIncrease } from './action/counter'
 
-// store.dispatch(changeDatasAndTotal(true))
+console.log();
 
+window.asyncIncrease = function () {
+    store.dispatch(asyncIncrease())
+}
 
-store.dispatch(fetchStudents())
+// store.dispatch(fetchStudents())
