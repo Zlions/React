@@ -1,0 +1,29 @@
+.login_wrapper {
+    width: 250px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.user,.pwd {
+    font-size: 12px;
+}
+.user {
+    margin-right: 1em;
+}
+.pwd {
+    margin-right: 2em;
+}
+input {
+    border: 1px solid #555;
+    border-radius: 5px;
+}
+.login_btn {
+    width: 230px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    height: 30px;
+    background-color: cadetblue;
+    margin-top: 10px;
+}
